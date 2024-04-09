@@ -1,0 +1,42 @@
+{{> Header }}
+
+<h1>{{title}}</h1>
+
+{{# unless pokemon }}
+<p>No Pokemon in the database! Please add one first.</p>
+{{ else }}
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Type</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{# each pokemon }}
+		<tr pokemon-id="{{ id }}">
+			<td>
+				{{ name }}
+			</td>
+			<td>
+				{{ type }}
+			</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>
+{{/ unless }}
+
+<form method="POST" action="/pokemon" id="new-pokemon-form">
+	<div>
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name" />
+	</div>
+
+	<div>
+		<label for="type">Type:</label>
+		<input type="text" id="type" name="type" />
+	</div>
+
+	<button>Create</button>
+</form>

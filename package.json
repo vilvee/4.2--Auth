@@ -1,0 +1,14 @@
+{
+    "name": "4.3-sessions",
+    "scripts": {
+        "server": "nodemon -L --watch 'src/**/*.ts' --exec 'tsx' src/server.ts"
+    },
+    "dependencies": {
+        "@types/node": "^20.11.10",
+        "dotenv": "^16.4.5",
+        "handlebars": "^4.7.8",
+        "prettier": "^3.2.4",
+        "typescript": "^5.3.3",
+        "nodemon": "^3.0.3"
+    }
+}
